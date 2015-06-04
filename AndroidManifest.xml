@@ -4,7 +4,8 @@
         <activity android:configChanges="orientation|uiMode|screenLayout|screenSize|smallestScreenSize|locale|fontScale|keyboard|keyboardHidden|navigation"
                   android:name="org.qtproject.example.notification.NotificationClient"
                   android:label="Qt Notifier"
-                  android:screenOrientation="unspecified">
+                  android:screenOrientation="unspecified"
+		android:debuggable="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
