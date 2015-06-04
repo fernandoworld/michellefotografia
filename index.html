@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="font-awesome-4.3.0/css/font-awesome.min.css">
+         <script>
+    window.plugins.Shortcut.CreateShortcut("Icone criado", successfunc, failfunc );
+     
+     // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        document.addEventListener("backbutton", function(e){
+        showConfirm();
+       });
+    }
+    // process the confirmation dialog result
+    function onConfirm(buttonIndex) {    	
+           if(buttonIndex=="1" || buttonIndex==1)
+        {
+        	if(navigator.app){        		
+        		navigator.app.exitApp();
+        	}else if(navigator.device){        		
+        		navigator.device.exitApp();
+        	}                       
+        }
+    }
+
+    // Show a custom confirmation dialog
+    //
+    function showConfirm() {
+        navigator.notification.confirm(
+            'Gostaria de sair do Aplicativo?',  // message
+            onConfirm,              // callback to invoke with index of button pressed
+            'Michelle Fotografia',            // title
+            'Sim,Não'          // buttonLabels
+        );
+    }
+  </script>  
+        <script type="text/javascript">
+      function init() {          		
+           location.href="home.html";       
+      }     
+        </script>
+         <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+         <script type="text/javascript" charset="utf-8" src="css/ShortcutPlugin.js"></script>
+         
+    </head>
+    <body bgcolor="#000000" >
+        <div id="splash" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; z-index: 10;">
+          <table border="0" width="100%" height="100%"  background="images\fundo_bg.jpg">
+	<tr>
+		<td><center> 	<div class="footer-section">
+				<h4><font color="#FFFFFF"><i class="fa fa-camera-retro fa-4x"></i><br> 
+				<br>
+				<i><font size="4" face="Arial">Michelle Dias<br> Fotografia</font></i></h4>				
+			
+			</font>	<br>
+		</center></td>
+	</tr>
+</table>
+        </div>
+        <div id="main">
+            <!-- keep empty -->
+        </div>
+    </body>
+
+</html>
+
+
